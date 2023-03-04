@@ -17,13 +17,10 @@ use App\Http\Controllers\UploadController;
 |
 */
 
+Route::apiResource('produit', 'App\Http\Controllers\ProduitController');
+
 Route::post('register', [AuthController::class, 'register']);
 Route::post('login', [AuthController::class, 'login']);
-
-Route::apiResource('produit', 'App\Http\Controllers\ProduitController');
-Route::post('upload', [App\Http\Controllers\ProduitController::class, 'store']);
-Route::put('update/{id}', [App\Http\Controllers\ProduitController::class, 'update']);
-
 
 Route::middleware('auth:sanctum')->group(function () {
     Route::get('user', [AuthController::class, 'user']);

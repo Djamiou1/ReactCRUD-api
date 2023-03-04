@@ -15,14 +15,9 @@ return new class extends Migration
     {
         Schema::create('produits', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
-            $table->string('image');
-            $table->text('description');
-            $table->string('category');
-            $table->string('localisation');
-            $table->float('price');
-            $table->bigInteger('user_id')->unsigned();
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->string('firstName');
+            $table->string('lastName');
+            $table->boolean('checkbox');
             $table->timestamps();
         });
     }
